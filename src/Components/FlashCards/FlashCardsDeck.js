@@ -1,10 +1,10 @@
 import FlashCard from "./FlashCard";
 
-function FlashCardsDeck({ cards }) {
+function FlashCardsDeck({ cards, deleteCard }) {
     function displayCards() {
         return cards.map((card) => {
             return (
-                <FlashCard card={card} key={card.id} />
+                <FlashCard card={card} key={card.id} deleteCard={deleteCard} />
             );
         });
     }

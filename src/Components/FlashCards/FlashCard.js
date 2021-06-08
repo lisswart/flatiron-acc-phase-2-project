@@ -1,5 +1,9 @@
-function FlashCard({ card }) {
-    const {headword, functionalLabel, definition, verbalIllustration} = card;
+function FlashCard({ card, deleteCard }) {
+    const {id, headword, functionalLabel, definition, verbalIllustration} = card;
+
+    function handleDeleteClick() {
+        deleteCard(id);
+    }
 
     return (
         <div className="flashcard">
@@ -7,7 +11,7 @@ function FlashCard({ card }) {
             <p>functional label:{functionalLabel}</p>
             <p>definition: {definition}</p>
             <p>verbal illustration: {verbalIllustration}</p>
-            <button className="button" style={{marginBottom: "1em"}}>Delete</button>
+            <button className="button" style={{marginBottom: "1em"}} onClick={handleDeleteClick}>Delete</button>
         </div>
     );
 }

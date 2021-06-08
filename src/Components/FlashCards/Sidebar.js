@@ -1,11 +1,14 @@
 import FlashCardsDeck from "./FlashCardsDeck";
 
-function Sidebar({ cards }) {
+function Sidebar({ cards, setNewCard, deleteCard }) {
+    function handleNewCardClick() {
+        setNewCard(true);
+    }
 
     return (
         <div className="master-detail-element sidebar">
-            <FlashCardsDeck cards={cards} />
-            <button className="button">New</button>
+            <button className="new-button" onClick={handleNewCardClick}>New</button>
+            <FlashCardsDeck cards={cards} deleteCard={deleteCard} />
         </div>
     );
 }
