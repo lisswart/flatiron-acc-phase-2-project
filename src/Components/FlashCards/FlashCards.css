@@ -1,0 +1,35 @@
+.flashcards-container {
+    display: grid;
+    grid-template-columns: 4fr 6fr;
+    /* height: 100%; */
+}
+
+.master-detail-element {
+    margin-bottom: 2em;
+}
+
+.sidebar {
+    grid-column: 1;
+    font-size: 24px;
+    padding: 2em 1em 2em 1em;
+    border-right: 2px solid ghostwhite;
+}
+
+.detail {
+    grid-column: 2;
+}
+
+.button {
+    padding: 0 2em 0 2em;
+    float:right;
+    margin: 1em 2em 1em 0;
+}
+
+.flashcard {
+    padding: 2em;
+    padding-bottom: 3em;
+    margin: 1.5em;
+    font-size: 16px;
+    background-color: brown;
+    color: cornsilk;
+}
