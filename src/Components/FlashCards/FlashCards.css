@@ -48,8 +48,8 @@
     display: flex;
     justify-content: flex-start;
     align-items: flex-start;
-    justify-content: space-evenly;
-    padding: 4em 0 0 4em;
+    justify-content:space-between;
+    padding: 4em 0 4em 4em;
     background-color: darkkhaki;
     color: ghostwhite;
     font-size: 18px;

@@ -1,6 +1,7 @@
 import FlashCard from "./FlashCard";
 
 function FlashCardsDeck({ cards, deleteCard, setViewCard }) {
+    
     function displayCards() {
         return cards.map((card) => {
             return (
