@@ -3,6 +3,7 @@ import MainPanel from "./MainPanel";
 import Sidebar from "./Sidebar";
 import { useState, useEffect } from "react";
 import NewFlashCardEntryForm from "./NewFlashCardEntryForm";
+import FlashCardViewer from "./FlashCardViewer";
 
 function FlashCardsContainer() {
     const [cards, setCards] = useState([]);
@@ -13,6 +14,10 @@ function FlashCardsContainer() {
         verbalIllustration: ""
     });
     const [newCard, setNewCard] = useState(false);
+    const [viewCard, setViewCard] = useState({
+        cardId: undefined,
+        toView: false
+    });
     
     useEffect(() => {
         fetch(`https://hidden-harbor-11546.herokuapp.com/words`)
@@ -50,10 +55,17 @@ function FlashCardsContainer() {
 
     return (
         <div className="flashcards-container">
-            <Sidebar cards={cards} setNewCard={setNewCard} deleteCard={deleteCard} />
+            <Sidebar cards={cards} 
+                setNewCard={setNewCard} 
+                deleteCard={deleteCard} 
+                viewCard={viewCard}
+                setViewCard={setViewCard}
+            />
             {
                 newCard 
                 ? <NewFlashCardEntryForm formState={formState} setFormState={setFormState} addCard={addCard} setNewCard={setNewCard} />
+                : viewCard.toView
+                ? <FlashCardViewer viewCard={viewCard} /> 
                 : <MainPanel />
             }
         </div>
