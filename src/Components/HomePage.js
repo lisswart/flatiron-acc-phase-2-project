@@ -2,8 +2,10 @@
 
 function HomePage() {
     return (
-        <div style={{fontSize: "5em", textAlign: "center", padding:"2em", color: "mintcream"}}>
-            <span>Home Page</span>
+        <div className="homepage-wrapper">
+            <div className="homepage"><div style={{fontSize: "4em"}}>☸</div></div>
+            <div className="homepage"><div style={{fontSize: "4em"}}>☯</div></div>
+            <div className="homepage"><div style={{fontSize: "4em"}}>🕉</div></div>
         </div>
     );
 }
