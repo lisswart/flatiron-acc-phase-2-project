@@ -13,7 +13,13 @@ function EditForm({ cardId, editFormState, setEditFormState, editCard }) {
 
     function handleEditFormSubmit(event) {
         event.preventDefault();
-        editCard(cardId);
+        const updatedCard = {
+            headword: editFormState.headword,
+            functionalLabel: editFormState.functionalLabel,
+            definition: editFormState.definition,
+            verbalIllustration: editFormState.verbalIllustration
+        }
+        editCard(updatedCard);
     }
 
     return (
@@ -21,20 +27,30 @@ function EditForm({ cardId, editFormState, setEditFormState, editCard }) {
             <form onSubmit={handleEditFormSubmit}>
                 <div className="inputbox">
                     <label>headword: </label>
-                    <input type="text" name="headword" value={editFormState.headword} onChange={handleEditChange} />
+                    <input type="text" name="headword" 
+                        value={editFormState.headword} 
+                        onChange={handleEditChange} />
                 </div>
                 <div className="inputbox">
                     <label>functional label: </label>
-                    <input type="text" name="functionalLabel" value={editFormState.functionalLabel} onChange={handleEditChange} />
+                    <input type="text" name="functionalLabel" 
+                        value={editFormState.functionalLabel} 
+                        onChange={handleEditChange} />
                 </div>
                 <div className="inputbox">
                     <label>definition: </label>
-                    <input type="text" name="definition" value={editFormState.definition} onChange={handleEditChange} />
+                    <input type="text" name="definition" 
+                        value={editFormState.definition} 
+                        onChange={handleEditChange} />
                 </div>
                 <div className="inputbox">
                     <label>verbal illustration: </label>
-                    <input type="text" name="verbalIllustration" value={editFormState.verbalIllustration} onChange={handleEditChange} />
+                    <input type="text" name="verbalIllustration" 
+                        value={editFormState.verbalIllustration} 
+                        onChange={handleEditChange} />
                 </div>
+                <button>Save</button>
+                <button>Cancel</button>
             </form>
         </div>
     );

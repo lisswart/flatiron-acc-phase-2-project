@@ -17,15 +17,18 @@ function FlashCardViewer({ viewCard }) {
         setIsEditMode(!isEditMode);
     }
 
-    function editCard(cardId) {
+    function editCard(cardId, updatedCard) {
         fetch(`https://hidden-harbor-11564.herokuapp.com/words/${cardId}`, {
             method: "PATCH",
             headers: {
                 "Content-Type": "application/json"
             },
-            body: JSON.stringify({editFormState})
-        });
+            body: JSON.stringify({updatedCard})
+        })
+            .then(r => r.json())
+            .then(console.log);
     }
+    
 
     function getCard(cardId) {
         fetch(`https://hidden-harbor-11564.herokuapp.com/words/${cardId}`)
@@ -42,9 +45,7 @@ function FlashCardViewer({ viewCard }) {
         <div>
             {getCard()}
             <button onClick={handleToggleEditMode}>Edit</button>
-            <button>Save</button>
-            <button>Cancel</button>
-            {isEditMode && <EditForm cardId={cardId} editFormState={editFormState} setEditFormState={setEditFormState} />}
+            {isEditMode && <EditForm cardId={cardId} editFormState={editFormState} setEditFormState={setEditFormState} editCard={editCard} />}
         </div>
     );
 }
