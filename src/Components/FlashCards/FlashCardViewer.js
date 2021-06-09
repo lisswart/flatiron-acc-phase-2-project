@@ -1,3 +1,4 @@
+
 import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 
@@ -42,6 +43,7 @@ function FlashCardViewer() {
                     <button onClick={handleFlipClick} className="reveal-button">reveal</button>
                 </div>
             }
+
         </div>
     );
 }

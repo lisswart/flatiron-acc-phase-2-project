@@ -4,11 +4,13 @@ import Sidebar from "./Sidebar";
 import { useState, useEffect } from "react";
 import { Switch, Route, useRouteMatch, useParams } from "react-router-dom";
 import NewFlashCardEntryForm from "./NewFlashCardEntryForm";
+
 import EditForm from "./EditForm";
 // import FlashCardViewer from "./FlashCardViewer";
 
 // const URL = `https://hidden-harbor-11546.herokuapp.com/words`;
 const LOCAL = `http://localhost:3000/words`;
+
 
 function FlashCardsContainer() {
     const [cards, setCards] = useState([]);
@@ -19,6 +21,7 @@ function FlashCardsContainer() {
         verbalIllustration: ""
     });
     const [newCard, setNewCard] = useState(false);
+
     const [isOnEditMode, setIsOnEditMode] = useState(false);
     const [cardToBeEdited, setCardToBeEdited] = useState({
         id: undefined,
@@ -30,6 +33,7 @@ function FlashCardsContainer() {
         functionalLabel: "",
         definition: "",
         verbalIllustration: ""
+
     });
     
     useEffect(() => {        
@@ -88,6 +92,7 @@ function FlashCardsContainer() {
         <div className="flashcards-container">
             <Sidebar cards={cards} 
                 setNewCard={setNewCard} 
+
                 isOnEditMode={isOnEditMode}
                 setIsOnEditMode={setIsOnEditMode}
                 cardToBeEdited={cardToBeEdited}
@@ -112,6 +117,7 @@ function FlashCardsContainer() {
                 </Route>
             </Switch>
             
+
         </div>
     );
 }

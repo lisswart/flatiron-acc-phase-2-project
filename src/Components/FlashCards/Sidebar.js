@@ -1,6 +1,8 @@
 import FlashCardsDeck from "./FlashCardsDeck";
 
+
 function Sidebar({ cards, setNewCard, isOnEditMode, setIsOnEditMode, cardToBeEdited, setCardToBeEdited, editCard, deleteCard }) {
+n
     function handleNewCardClick() {
         setNewCard(true);
     }
@@ -8,6 +10,7 @@ function Sidebar({ cards, setNewCard, isOnEditMode, setIsOnEditMode, cardToBeEdi
     return (
         <div className="master-detail-element sidebar">
             <button className="new-button" onClick={handleNewCardClick}>New</button>
+
             <FlashCardsDeck cards={cards} 
                 isOnEditMode={isOnEditMode}
                 setIsOnEditMode={setIsOnEditMode}
@@ -15,6 +18,7 @@ function Sidebar({ cards, setNewCard, isOnEditMode, setIsOnEditMode, cardToBeEdi
                 setCardToBeEdited={setCardToBeEdited}
                 editCard={editCard} 
                 deleteCard={deleteCard} />
+
         </div>
     );
 }

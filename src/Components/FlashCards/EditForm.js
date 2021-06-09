@@ -1,8 +1,8 @@
 
-
 function EditForm({ editFormState, setEditFormState, cardToBeEdited, isOnEditMode, setIsOnEditMode, editCard }) {
 
     function handleChange(event) {
+
         const fieldName = event.target.name;
         const userInput = event.target.value;
         setEditFormState({
@@ -10,6 +10,7 @@ function EditForm({ editFormState, setEditFormState, cardToBeEdited, isOnEditMod
             [fieldName]: userInput
         });
     }
+
 
     function handleSubmit(event) {
         event.preventDefault();
@@ -24,10 +25,12 @@ function EditForm({ editFormState, setEditFormState, cardToBeEdited, isOnEditMod
 
     function handleCancelClick() {
         setIsOnEditMode(!isOnEditMode);
+
     }
 
     return (
         <div className="form-view">
+
             <form onSubmit={handleSubmit}>
                 <div className="inputbox" >
                     <strong>headword: </strong>{cardToBeEdited.headword}
@@ -46,8 +49,11 @@ function EditForm({ editFormState, setEditFormState, cardToBeEdited, isOnEditMod
                 <button onClick={handleCancelClick}>Cancel</button>
                 <button type="submit">Submit</button>
             </form>            
+
         </div>
     );
 }
 
 export default EditForm;
+
+
