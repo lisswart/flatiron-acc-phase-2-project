@@ -62,3 +62,29 @@
    display: flex;
    flex-direction: column;
 }
+
+.link {
+    color: white;
+    text-decoration: none;
+}
+
+.link:hover {
+    color: gold;
+}
+
+.card-on-view-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card-on-view-wrapper {
+    border: 4px solid mintcream;
+    box-sizing: border-box;
+    padding: 2em;
+    background-color: rgb(83, 51, 3);
+    color: navajowhite;
+    font-size: 20px;
+    font-weight: bolder;
+    margin-top: 4em;
+}

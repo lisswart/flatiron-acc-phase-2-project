@@ -7,6 +7,7 @@ import Navbar from "./Components/Navbar";
 import FlashCardsContainer from "./Components/FlashCards/FlashCardsContainer";
 import DictionaryContainer from "./Components/Dictionary/DictionaryContainer";
 import HangmanContainer from "./Components/Hangman/HangmanContainer";
+import FlashCardViewer from "./Components/FlashCards/FlashCardViewer";
 
 function App() {
   return (
@@ -26,6 +27,9 @@ function App() {
           </Route>
           <Route path="/hangman">
             <HangmanContainer />
+          </Route>
+          <Route exact path={"/words/:id"}>
+            <FlashCardViewer />
           </Route>
           <Route path="*">
             <div style={{display: "flex", justifyContent: "center", alignItems: "center", backgroundColor: "darkgrey", color: "crimson", fontSize: "3em", paddingTop: "3em", paddingBottom: "3em"}}>404 Path Not Found ╮(╯▽╰)╭</div>

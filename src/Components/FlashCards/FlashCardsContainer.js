@@ -2,7 +2,12 @@ import "./FlashCards.css";
 import MainPanel from "./MainPanel";
 import Sidebar from "./Sidebar";
 import { useState, useEffect } from "react";
+import { Switch, Route } from "react-router-dom";
 import NewFlashCardEntryForm from "./NewFlashCardEntryForm";
+// import FlashCardViewer from "./FlashCardViewer";
+
+// const URL = `https://hidden-harbor-11546.herokuapp.com/words`;
+const LOCAL = `http://localhost:3000/words`;
 
 function FlashCardsContainer() {
     const [cards, setCards] = useState([]);
@@ -14,8 +19,8 @@ function FlashCardsContainer() {
     });
     const [newCard, setNewCard] = useState(false);
     
-    useEffect(() => {
-        fetch(`https://hidden-harbor-11546.herokuapp.com/words`)
+    useEffect(() => {        
+        fetch(LOCAL)
             .then(r => r.json())
             .then(cardObjs => {
                 setCards(cardObjs);
@@ -23,7 +28,7 @@ function FlashCardsContainer() {
     }, []);
 
     function addCard(card) {
-        fetch(`https://hidden-harbor-11546.herokuapp.com/words`, {
+        fetch(LOCAL, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
@@ -38,7 +43,7 @@ function FlashCardsContainer() {
     }
 
     function deleteCard(cardId) {
-        fetch(`https://hidden-harbor-11546.herokuapp.com/words/${cardId}`, {
+        fetch(`${LOCAL}/${cardId}`, {
             method: "DELETE"            
         })
             .then(r => r.json())
@@ -51,11 +56,19 @@ function FlashCardsContainer() {
     return (
         <div className="flashcards-container">
             <Sidebar cards={cards} setNewCard={setNewCard} deleteCard={deleteCard} />
-            {
-                newCard 
-                ? <NewFlashCardEntryForm formState={formState} setFormState={setFormState} addCard={addCard} setNewCard={setNewCard} />
-                : <MainPanel />
-            }
+            <Switch>
+                {/* <Route exact path={"/words/:id"}>
+                    <FlashCardViewer />
+                </Route> */}
+                <Route>
+                    {
+                        newCard 
+                        ? <NewFlashCardEntryForm path={"/newCardEntryForm"}formState={formState} setFormState={setFormState} addCard={addCard} setNewCard={setNewCard} />
+                        : <MainPanel />
+                    } 
+                </Route>
+            </Switch>
+            
         </div>
     );
 }
