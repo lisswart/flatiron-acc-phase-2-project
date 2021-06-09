@@ -9,7 +9,7 @@
 }
 
 #header {
-  background-color: rgb(53, 31, 31);
+  background-color: rgb(27, 3, 3);
   color: navajowhite;
   padding: 3em 0 3em 0;
   margin: 0;
@@ -18,8 +18,8 @@
 }
 
 #footer {
-  background-color: rgb(53, 31, 31);
-  color: honeydew;
+  background-color: palevioletred;
+  color: cornsilk;
   font-size: 18px;
   position: fixed;
   width: 100%;
@@ -36,7 +36,7 @@
   display: flex;
   justify-content: center;
   justify-content: space-evenly;
-  background-color: navajowhite;
+  background-color: powderblue;
   align-items: center;
   padding: 1em 0 1em 0;
   position: relative;
@@ -57,7 +57,7 @@
   min-width: 10em;
   min-height: 10em;
   border-radius: 50%;
-  background-color: crimson;
+  background-color: moccasin;
   text-align: center;
   display: flex;
   justify-content: center;

@@ -3,10 +3,10 @@ import { NavLink } from "react-router-dom";
 function Navbar() {
     return (
         <div className="navbar">
-            <NavLink to="/">Home Page</NavLink>
-            <NavLink to="/flashcards">FlashCards</NavLink>
-            <NavLink to="/dictionary">Dictionary</NavLink>
-            <NavLink to="/hangman">Hangman</NavLink>
+            <NavLink className="link" to="/">Home Page</NavLink>
+            <NavLink className="link" to="/flashcards">FlashCards</NavLink>
+            <NavLink className="link" to="/dictionary">Dictionary</NavLink>
+            <NavLink className="link" to="/hangman">Hangman</NavLink>
         </div>
     );
 }

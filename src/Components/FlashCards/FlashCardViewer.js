@@ -39,7 +39,7 @@ function FlashCardViewer() {
                 <div className="card-on-view-wrapper">
                     <h2 className="card-on-view-headword">{card.headword}</h2>
                     <p className="card-on-view-functional-label">{card.functionalLabel}</p>            
-                    <button onClick={handleFlipClick}>reveal</button>
+                    <button onClick={handleFlipClick} className="reveal-button">reveal</button>
                 </div>
             }
         </div>
